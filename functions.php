@@ -1161,6 +1161,6 @@ add_filter('pre_get_posts','wp_search_filter');
 
 $a = 201;
 $b = 20;
- echo $a - $b;
+ echo $a + $b;
 
 ?>
