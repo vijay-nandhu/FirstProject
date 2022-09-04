@@ -1159,6 +1159,9 @@ add_filter('pre_get_posts','wp_search_filter');
 
 /**************** For Post Object autocomplete field working ***********************/
 
+
 $a = 200;
+$b = 20;
+ echo $a + $b;
 
 ?>
