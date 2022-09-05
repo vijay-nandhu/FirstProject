@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript | fetch() Method</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <script>
+      // API for get requests
+      const url = "https://jsonplaceholder.typicode.com/posts";
+      // fetchRes is the promise to resolve
+      // it by using.then() method
+      fetch(url)
+        .then((response) => {
+          if (!response.ok) {
+            throw Error(response.status);
+          }
+          return response.json();
+        })
+        .then((parsed) => {
+          // const { title } = parsed;
+          // document.write(parsed.title);
+          console.log(parsed);
+          Object.values(parsed).forEach((val) => {
+            document.write("title : " + val.title + "<br><br>");
+            document.write("desc : " + val.body + "<br><br>");
+          });
+        })
+        .catch((Err) => {
+          alert(Err + " Oops");
+        });
+    </script>
+  </body>
+</html>
