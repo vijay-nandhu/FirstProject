@@ -14,16 +14,16 @@
       // it by using.then() method
       fetch(url)
         .then((response) => {
+          // check promises ok value
           if (!response.ok) {
+            // if error occured throw to the catch block
             throw Error(response.status);
           }
+          // JSON object converted to JS object and value return into next .then block
           return response.json();
         })
         .then((parsed) => {
-          // const { title } = parsed;
-          // document.write(parsed.title);
-          console.log(parsed);
-          Object.values(parsed).forEach((val) => {
+          parsed.forEach((val) => {
             document.write("title : " + val.title + "<br><br>");
             document.write("desc : " + val.body + "<br><br>");
           });
